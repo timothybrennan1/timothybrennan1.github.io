@@ -11,15 +11,19 @@ body {
   line-height: 1.6;
 }
 
+
+
+
 header {
+   background: #003366;
+   height: 60px;                /* fixed height for consistent centering */
+  display: flex;
+  align-items: center;          /* vertically center everything */
+  padding: 0 20px;              /* horizontal spacing */
   border-radius: 15px;
-  background: #222;
-  color: #fff;
-  padding: 10px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 60px; /* keeps navbar consistent */
 }
 
 /* Keep link color white on all devices */
@@ -52,12 +56,34 @@ nav a:hover {
 /* Navbar base styles (keep your existing ones) */
 nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  margin: 0 auto;
-  position: relative;
+  justify-content: space-between; /* keep name on left, links on right */
+  align-items: center;            /* vertical centering inside nav */
+  width: 100%;
 }
+
+nav h1 {
+  margin: 0;
+  margin-left: 40px; /* desktop default */
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #fff;
+}
+
+/* MOBILE: smaller screens */
+@media (max-width: 768px) {
+  nav h1 {
+    margin-left: 20px; /* less indentation on mobile */
+    font-size: 1.6rem; /* optional: slightly smaller for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  nav h1 {
+    margin-left: 15px; /* very small devices */
+    font-size: 1.5rem;
+  }
+}
+
 
 .nav-links {
   list-style: none;
@@ -192,7 +218,7 @@ section {
 }
 
 footer {
-  background: #222;
+  background: #003366;
   color: #fff;
   text-align: center;
   padding: 20px;
@@ -231,5 +257,37 @@ footer {
   .hero-container {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+
+/* MOBILE HERO ADJUSTMENTS */
+@media (max-width: 768px) {
+  #hero {
+    padding: 40px 10px; /* less vertical padding */
+  }
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px; /* less space between image and text */
+  }
+
+  .hero-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }
